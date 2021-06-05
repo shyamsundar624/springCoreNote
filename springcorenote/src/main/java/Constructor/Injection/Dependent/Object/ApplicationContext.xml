@@ -8,12 +8,18 @@
  http://www.springframework.org/schema/context
  http://www.springframework.org/schema/context/spring-context.xsd">
  
- <bean class="com.spring.note.Student" id="stud">
- <property name="id">
- <value>199</value></property>
- 
- <property name="name"><value>SHYAM</value></property>
- <property name="city"><value>Patna</value></property>
+ <bean class="Constructor.Injection.Dependent.Object.Address" name="add">
+ <constructor-arg value="Rosera" />
+ <constructor-arg value="Bihar" />
+ <constructor-arg value="India" />
  </bean>
  
+ <bean class="Constructor.Injection.Dependent.Object.Employee" name="emp">
+ <constructor-arg value="1399" type="int"/>
+ <constructor-arg value="Shyam" type="String"/>
+ <constructor-arg>
+ <ref bean="add"/>
+ </constructor-arg>
+ 
+ </bean>
  </beans>
